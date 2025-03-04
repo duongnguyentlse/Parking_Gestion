@@ -1,0 +1,44 @@
+Module Type ParkingSystem.
+
+  (* Sortes *)
+  Parameter VehicleType : Type.
+  Parameter Vehicle : Type.
+  Parameter Ticket : Type.
+  Parameter Parking : Type.
+
+  (* Opérateurs *)
+  Parameter mkVehicle : string -> VehicleType -> nat -> nat -> Vehicle.
+  Parameter mkTicket : nat -> nat -> option nat -> Vehicle -> nat -> option nat -> Ticket.
+  Parameter mkParking : list Ticket -> bool -> Parking.
+
+  Parameter get_tickets : Parking -> list Ticket.
+  Parameter get_accessible : Parking -> bool.
+  Parameter get_ticket_id : Ticket -> nat.
+  Parameter get_entry_time : Ticket -> nat.
+  Parameter get_exit_time : Ticket -> option nat.
+  Parameter get_vehicle : Ticket -> Vehicle.
+  Parameter get_amount_due : Ticket -> nat.
+  Parameter get_fine : Ticket -> option nat.
+  Parameter get_vehicle_type : Vehicle -> VehicleType.
+
+  Parameter add_ticket : Parking -> Ticket -> Parking.
+  Parameter remove_ticket : Parking -> nat -> Parking.
+  Parameter find_ticket : Parking -> nat -> option Ticket.
+  Parameter sort_tickets_by_vehicle_type : list Ticket -> list Ticket.
+  Parameter sort_tickets_by_entry_time : list Ticket -> list Ticket.
+
+  (* Variables *)
+  Variable p : Parking.
+  Variable t : Ticket.
+  Variable id : nat.
+  Variable vt : VehicleType.
+  Variable v : Vehicle.
+  Variable ts : list Ticket.
+
+  (* Axiomes *)
+  Axiom add_ticket_correct : In t (get_tickets (add_ticket p t)).
+  Axiom remove_ticket_correct : In t (get_tickets (remove_ticket p id)) -> get_ticket_id t <> id.
+  Axiom sorted_by_vehicle_type : forall ts, sorted_by_vehicle_type (sort_tickets_by_vehicle_type ts).
+  Axiom sorted_by_entry_time : forall ts, sorted_by_entry_time (sort_tickets_by_entry_time ts).
+
+End ParkingSystem.
