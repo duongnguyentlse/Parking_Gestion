@@ -39,6 +39,7 @@ Avant d'exécuter le programme, assurez-vous d'avoir installé **ocamlfind**, un
 🔗 [Installation de ocamlfind](https://opam.ocaml.org/packages/ocamlfind/)  
 
 ### Lancer le programme avec une opération CRUD sur le fichier de données :  
+Example avec l'opération D (Delete)
 ```bash
 make
 ./crudocaml.exe -d data/data.csv
