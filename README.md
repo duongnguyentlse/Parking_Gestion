@@ -29,11 +29,17 @@ Chaque véhicule dispose d’un **tarif initial** et d’une méthode spécifiqu
 ```plaintext
 Montant total = (Tarif initial + Tarif supplémentaire) + Amende éventuelle
 ```
-# Installation et Exécution
+Installation et Exécution (OCaml uniquement)
+⚠️ Ce guide d'installation et d'exécution concerne uniquement la version OCaml du projet.
 
-### Lancer le programme avec une operateur (crud) sur le fichier de données :
-```bash
+Prérequis
+Avant d'exécuter le programme, assurez-vous d'avoir installé ocamlfind, un gestionnaire de bibliothèques pour OCaml. Vous pouvez l'installer via OPAM :
+
+🔗 Installation de ocamlfind
+
+Lancer le programme avec une opération CRUD sur le fichier de données :
+bash
+Copier
+Modifier
 make
 ./crudocaml.exe -d data/data.csv
-```
-
