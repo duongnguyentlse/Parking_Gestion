@@ -28,16 +28,12 @@ Chaque véhicule dispose d’un **tarif initial** et d’une méthode spécifiqu
 **Formule de calcul du montant total** :  
 ```plaintext
 Montant total = (Tarif initial + Tarif supplémentaire) + Amende éventuelle
-# Installation et Exécution
-
-## OCaml
-### Compiler le projet :
-```bash
-make
 ```
+# Installation et Exécution
 
 ### Lancer le programme avec une operateur (crud) sur le fichier de données :
 ```bash
+make
 ./crudocaml.exe -d data/data.csv
 ```
 
