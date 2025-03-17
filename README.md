@@ -1,5 +1,43 @@
-**Titre : Parking Management**
+# Parking Management 🚗🅿️
 
-Le sujet qui est la poursuite de celui que j'ai fait pour les UEs ILU1 ou ILU2. Le projet vise à gérer un parking avec des fonctions telles que l'ajout, la suppression, la modification, le tri et la recherche. Chaque billet sera muni d'un identifiant, d'une heure d'entrée, d'une heure de sortie, d'un montant à payer et d'un objet véhicule. La méthode de calcul dépendra du type de véhicule, la méthode de calcul du montant total sera : montant total (tarif initial + tarif supplémentaire éventuelle) + amende éventuelle. Les tarifs changeront toutes les 60 minutes, ce qui signifie que le tarif augmentera toutes les 60 minutes selon le modèle de véhicule. Les véhicules peuvent être condamnés à une amende s'ils le sont. Chaque véhicule doit avoir un billet, un tarif initial, une plaque d'immatriculation, un mode abstrait de calcul de frais, un mode abstrait de calcul d'amende. Le 4-roues est un type de véhicule avec un tarif initial de 30, toutes les 60 minutes le tarif augmentera à 30% par rapport à tarif initial. Un 2-roues est un véhicule avec un tarif initial de 10, toutes les 60 minutes le tarif augmentera de 10%. Le parking est accessible aux personnes à mobilité réduite si l'utilisateur le souhaite.
+## Présentation  
+Ce projet est une continuation des travaux réalisés dans les UEs **ILU1 et ILU2**. Il vise à gérer un parking avec diverses fonctionnalités, notamment **l'ajout, la suppression, la modification, le tri et la recherche de billets de stationnement**. Le projet est implémenté en **Java, OCaml et Coq**.
 
-Le programme est écrit en 3 langages de programmation qui sont Java, Ocaml et Coq.
+## Objectifs  
+- Gérer un parking avec **des tickets de stationnement associés à chaque véhicule**.  
+- Calculer les frais de stationnement en fonction **du type de véhicule et du temps de stationnement**.  
+- Appliquer des **amendes éventuelles** selon certaines conditions.  
+- Assurer **l'accessibilité aux personnes à mobilité réduite**.  
+
+## Fonctionnalités  
+- **Gestion des tickets** :  
+  - Ajout, suppression, modification, tri et recherche de tickets.  
+- **Système de tarification dynamique** :  
+  - Les tarifs augmentent toutes les **60 minutes** selon le type de véhicule.  
+- **Système d’amendes** :  
+  - Les véhicules peuvent recevoir des **amendes en cas d’infraction**.  
+
+## Modèle de Tarification  
+Chaque véhicule dispose d’un **tarif initial** et d’une méthode spécifique pour calculer l’évolution du tarif toutes les **60 minutes**.  
+
+| Type de véhicule | Tarif initial | Augmentation par heure |
+|-----------------|--------------|----------------------|
+| **4-roues**    | 30 €         | +30 % du tarif initial |
+| **2-roues**    | 10 €         | +10 % du tarif initial |
+
+**Formule de calcul du montant total** :  
+```plaintext
+Montant total = (Tarif initial + Tarif supplémentaire) + Amende éventuelle
+# Installation et Exécution
+
+## OCaml
+### Compiler le projet :
+```bash
+make
+```
+
+### Lancer le programme avec une operateur (crud) sur le fichier de données :
+```bash
+./crudocaml.exe -d data/data.csv
+```
+
