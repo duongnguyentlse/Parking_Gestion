@@ -43,7 +43,7 @@ Avant d'exécuter le programme, assurez-vous d'avoir installé **ocamlfind**, un
 make
 ./crudocaml.exe -d data/data.csv
 ```
-![Exécution du programme en OCaml](https://drive.google.com/file/d/1QgPsUx36IDF4oMETssZixuOT_yhKUN4J/view?usp=drive_link)
+[Voici un exemple d'exécution en Ocaml](https://github.com/duongnguyentlse/Parking_Gestion/blob/main/ParkingManagement/ExecutionOcaml.png)
 
 
 
